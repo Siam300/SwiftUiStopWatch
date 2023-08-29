@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		C96EE3062A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EE3052A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift */; };
-		C96EE3082A9DBA8700FE8CFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EE3072A9DBA8700FE8CFF /* ContentView.swift */; };
 		C96EE30A2A9DBA8900FE8CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96EE3092A9DBA8900FE8CFF /* Assets.xcassets */; };
 		C96EE30D2A9DBA8900FE8CFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96EE30C2A9DBA8900FE8CFF /* Preview Assets.xcassets */; };
+		C96EE3142A9DBAC300FE8CFF /* Stop Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EE3132A9DBAC300FE8CFF /* Stop Watch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C96EE3022A9DBA8700FE8CFF /* SwiftUiStopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUiStopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96EE3052A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUiStopwatchApp.swift; sourceTree = "<group>"; };
-		C96EE3072A9DBA8700FE8CFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C96EE3092A9DBA8900FE8CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C96EE30C2A9DBA8900FE8CFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C96EE3132A9DBAC300FE8CFF /* Stop Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stop Watch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				C96EE3052A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift */,
-				C96EE3072A9DBA8700FE8CFF /* ContentView.swift */,
+				C96EE3132A9DBAC300FE8CFF /* Stop Watch.swift */,
 				C96EE3092A9DBA8900FE8CFF /* Assets.xcassets */,
 				C96EE30B2A9DBA8900FE8CFF /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C96EE3082A9DBA8700FE8CFF /* ContentView.swift in Sources */,
+				C96EE3142A9DBAC300FE8CFF /* Stop Watch.swift in Sources */,
 				C96EE3062A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
