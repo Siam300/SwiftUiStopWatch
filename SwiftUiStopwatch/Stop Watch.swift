@@ -12,6 +12,7 @@ struct Stop_Watch: View {
     @State private var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     @State private var isRunning = false
     @State private var elapsedSeconds = 0.0
+    @State private var laps: [Double] = []
     
     var body: some View {
         NavigationView {
@@ -24,7 +25,7 @@ struct Stop_Watch: View {
                             .fill(Color.blue)
                             .frame(width: 200)
                             .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                        Text(time(elapsedSeconds))
+                        Text(timeString(elapsedSeconds))
                             .font(.largeTitle)
                             .foregroundColor(Color.white)
                     }
@@ -39,6 +40,14 @@ struct Stop_Watch: View {
                         .foregroundColor(.white)
                         .clipShape(Circle())
                         
+                        Button(action: lapAction) {
+                            Image(systemName: "flag.fill")
+                        }
+                        .padding()
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                        
                         Button(action: reset) {
                             Text("Reset")
                                 .font(.title2)
@@ -48,6 +57,19 @@ struct Stop_Watch: View {
                         .foregroundColor(.white)
                         .clipShape(Circle())
                     }
+                    
+                    ScrollView {
+                        VStack {
+                            ForEach(laps.indices, id: \.self) { index in
+                                Text("Lap \(index + 1): \(timeString(laps[index]))")
+                                    .padding()
+                                    .background(Color.white.opacity(0.5))
+                                    .cornerRadius(10)
+                            }
+                        }
+                        .padding()
+                    }
+
                 }
                 .onReceive(timer) { _ in
                     if self.isRunning {
@@ -59,6 +81,13 @@ struct Stop_Watch: View {
         }
     }
     
+    func lapAction() {
+        if isRunning {
+            laps.append(elapsedSeconds)
+            //elapsedSeconds = 0
+        }
+    }
+    
     func startStop() {
         isRunning.toggle()
     }
@@ -66,13 +95,15 @@ struct Stop_Watch: View {
     func reset() {
         isRunning = false
         elapsedSeconds = 0
+        laps.removeAll()
     }
     
-    func time(_ seconds: Double) -> String {
-        let hours = Int(seconds) / 3600
-        let minutes = Int(seconds) / 60 % 60
-        let seconds = Int(seconds) % 60
-        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+    func timeString(_ totalSeconds: Double) -> String {
+        let hours = Int(totalSeconds) / 3600
+        let minutes = Int(totalSeconds) / 60 % 60
+        let seconds = Int(totalSeconds) % 60
+        let milliseconds = Int(totalSeconds * 100) % 100
+        return String(format: "%02i:%02i:%02i.%02i", hours, minutes, seconds, milliseconds)
     }
     
 }
