@@ -13,6 +13,7 @@ struct Stop_Watch: View {
     @State private var isRunning = false
     @State private var elapsedSeconds = 0.0
     @State private var laps: [Double] = []
+    @State private var lapTime = 0.0
     
     var body: some View {
         NavigationView {
@@ -74,6 +75,7 @@ struct Stop_Watch: View {
                 .onReceive(timer) { _ in
                     if self.isRunning {
                         self.elapsedSeconds += 0.01
+                        self.lapTime += 0.01
                     }
                 }
                 .navigationTitle("Stop Watch ⏱")
@@ -83,10 +85,11 @@ struct Stop_Watch: View {
     
     func lapAction() {
         if isRunning {
-            laps.append(elapsedSeconds)
-            //elapsedSeconds = 0
+            let lapTime = elapsedSeconds - laps.reduce(0, +)
+            laps.append(lapTime)
         }
     }
+
     
     func startStop() {
         isRunning.toggle()
@@ -95,6 +98,7 @@ struct Stop_Watch: View {
     func reset() {
         isRunning = false
         elapsedSeconds = 0
+        lapTime = 0
         laps.removeAll()
     }
     
