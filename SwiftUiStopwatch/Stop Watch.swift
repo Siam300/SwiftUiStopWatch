@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//import FontAwesome_swift
 
 struct Stop_Watch: View {
     
@@ -18,47 +19,15 @@ struct Stop_Watch: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("Stop Watch ⏱")
-                    .font(Font.custom("Hammersmith One", size: 30))
-                    .foregroundColor(.white)
-                    .padding()
+                titleView()
                 Spacer()
                 ZStack {
                     Image("Ellipse 1")
                         .frame(width: 250, height: 250)
-                    
-                    Circle()
-                        .trim(from: 0, to: CGFloat((elapsedSeconds.truncatingRemainder(dividingBy: 60)) / 60))
-                        .stroke(Color.white, style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                        .frame(width: 250, height: 250)
-                        .rotationEffect(.degrees(-90))
-                        .overlay(
-                            Circle()
-                                .trim(from: 0, to: CGFloat((elapsedSeconds.truncatingRemainder(dividingBy: 60)) / 60))
-                                .stroke(Color.white, style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                                .frame(width: 250, height: 250)
-                                .rotationEffect(.degrees(-90))
-                                .overlay(
-                                    ZStack {
-                                        Circle()
-                                            .frame(width: 18, height: 18)
-                                            .foregroundColor(.black)
-                                            .offset(x: 0, y: -125)
-                                            .rotationEffect(.degrees(elapsedSeconds.truncatingRemainder(dividingBy: 60) * 6))
-                                        
-                                        Circle()
-                                            .frame(width: 15, height: 15)
-                                            .foregroundColor(.white)
-                                            .offset(x: 0, y: -125)
-                                            .rotationEffect(.degrees(elapsedSeconds.truncatingRemainder(dividingBy: 60) * 6))
-                                    }
-                                )
-                        )
-                    
+                    circleView(elapsedSeconds: elapsedSeconds)
                     Text(timeString(elapsedSeconds))
-                        .font(Font.custom("Happy Monkey", size: 40))
+                        .font(Font.custom("HappyMonkey-Regular", size: 40))
                         .foregroundColor(.white)
-                    
                 }
                 Spacer()
                 
@@ -71,13 +40,15 @@ struct Stop_Watch: View {
                     }
                     
                     Spacer()
+                    
                     Button(action: startStop) {
-                        
-                        Image(isRunning ? "pause.fill" : "Polygon 1")
-                            .renderingMode(.template)
-                            .font(.largeTitle)
+                        ZStack {
+                            Image("Ellipse 4")
+                            Image(isRunning ? "pause.fill" : "Polygon 1")
+                                .renderingMode(.template)
+                                .font(.largeTitle)
                             .foregroundColor(.white)
-                        
+                        }
                     }
                     
                     Spacer()
@@ -126,7 +97,6 @@ struct Stop_Watch: View {
         }
     }
     
-    
     func startStop() {
         isRunning.toggle()
     }
@@ -145,11 +115,46 @@ struct Stop_Watch: View {
         let milliseconds = Int(totalSeconds * 100) % 100
         return String(format: "%02i:%02i:%02i.%02i", hours, minutes, seconds, milliseconds)
     }
-    
+
 }
 
 struct Stop_Watch_Previews: PreviewProvider {
     static var previews: some View {
         Stop_Watch()
+    }
+}
+
+struct titleView: View {
+    var body: some View {
+        Text("Stop Watch ⏱")
+            .font(Font.custom("HammersmithOne-Regular", size: 30))
+            .foregroundColor(.white)
+            .padding()
+    }
+}
+
+struct circleView: View {
+    var elapsedSeconds: Double
+    
+    var body: some View {
+        Circle()
+            .trim(from: 0, to: CGFloat((elapsedSeconds.truncatingRemainder(dividingBy: 60)) / 60))
+            .stroke(Color.white, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+            .frame(width: 250, height: 250)
+            .rotationEffect(.degrees(-90))
+            .overlay(
+                Circle()
+                    .trim(from: 0, to: CGFloat((elapsedSeconds.truncatingRemainder(dividingBy: 60)) / 60))
+                    .stroke(Color.white, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                    .frame(width: 250, height: 250)
+                    .rotationEffect(.degrees(-90))
+                    .overlay(
+                        Circle()
+                            .frame(width: 14, height: 14)
+                            .foregroundColor(.white)
+                            .offset(x: 0, y: -125)
+                            .rotationEffect(.degrees(elapsedSeconds.truncatingRemainder(dividingBy: 60) * 6))
+                    )
+            )
     }
 }

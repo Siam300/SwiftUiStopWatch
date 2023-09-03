@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C929A6D02AA4D3150056774E /* FontAwesome in Frameworks */ = {isa = PBXBuildFile; productRef = C929A6CF2AA4D3150056774E /* FontAwesome */; };
+		C929A6D22AA4D3150056774E /* tools in Frameworks */ = {isa = PBXBuildFile; productRef = C929A6D12AA4D3150056774E /* tools */; };
+		C929A6D62AA4D98A0056774E /* HappyMonkey-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C929A6D42AA4D9890056774E /* HappyMonkey-Regular.ttf */; };
+		C929A6D82AA4DAD90056774E /* HammersmithOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C929A6DA2AA4DAD90056774E /* HammersmithOne-Regular.ttf */; };
 		C96EE3062A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EE3052A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift */; };
 		C96EE30A2A9DBA8900FE8CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96EE3092A9DBA8900FE8CFF /* Assets.xcassets */; };
 		C96EE30D2A9DBA8900FE8CFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96EE30C2A9DBA8900FE8CFF /* Preview Assets.xcassets */; };
@@ -14,11 +18,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C929A6D42AA4D9890056774E /* HappyMonkey-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HappyMonkey-Regular.ttf"; sourceTree = "<group>"; };
+		C929A6D92AA4DAD90056774E /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = "en.lproj/HammersmithOne-Regular.ttf"; sourceTree = "<group>"; };
 		C96EE3022A9DBA8700FE8CFF /* SwiftUiStopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUiStopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96EE3052A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUiStopwatchApp.swift; sourceTree = "<group>"; };
 		C96EE3092A9DBA8900FE8CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C96EE30C2A9DBA8900FE8CFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C96EE3132A9DBAC300FE8CFF /* Stop Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stop Watch.swift"; sourceTree = "<group>"; };
+		C9DCE38E2AA4E07F00350D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +33,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C929A6D22AA4D3150056774E /* tools in Frameworks */,
+				C929A6D02AA4D3150056774E /* FontAwesome in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C929A6D32AA4D9750056774E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C929A6DA2AA4DAD90056774E /* HammersmithOne-Regular.ttf */,
+				C929A6D42AA4D9890056774E /* HappyMonkey-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		C96EE2F92A9DBA8700FE8CFF = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +69,8 @@
 		C96EE3042A9DBA8700FE8CFF /* SwiftUiStopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				C9DCE38E2AA4E07F00350D67 /* Info.plist */,
+				C929A6D32AA4D9750056774E /* Fonts */,
 				C96EE3052A9DBA8700FE8CFF /* SwiftUiStopwatchApp.swift */,
 				C96EE3132A9DBAC300FE8CFF /* Stop Watch.swift */,
 				C96EE3092A9DBA8900FE8CFF /* Assets.xcassets */,
@@ -83,6 +103,10 @@
 			dependencies = (
 			);
 			name = SwiftUiStopwatch;
+			packageProductDependencies = (
+				C929A6CF2AA4D3150056774E /* FontAwesome */,
+				C929A6D12AA4D3150056774E /* tools */,
+			);
 			productName = SwiftUiStopwatch;
 			productReference = C96EE3022A9DBA8700FE8CFF /* SwiftUiStopwatch.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +135,9 @@
 				Base,
 			);
 			mainGroup = C96EE2F92A9DBA8700FE8CFF;
+			packageReferences = (
+				C929A6CE2AA4D3150056774E /* XCRemoteSwiftPackageReference "FontAwesome.swift" */,
+			);
 			productRefGroup = C96EE3032A9DBA8700FE8CFF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96EE30D2A9DBA8900FE8CFF /* Preview Assets.xcassets in Resources */,
+				C929A6D62AA4D98A0056774E /* HappyMonkey-Regular.ttf in Resources */,
+				C929A6D82AA4DAD90056774E /* HammersmithOne-Regular.ttf in Resources */,
 				C96EE30A2A9DBA8900FE8CFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +172,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C929A6DA2AA4DAD90056774E /* HammersmithOne-Regular.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C929A6D92AA4DAD90056774E /* en */,
+			);
+			name = "HammersmithOne-Regular.ttf";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C96EE30E2A9DBA8900FE8CFF /* Debug */ = {
@@ -269,6 +309,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUiStopwatch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUiStopwatch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "\"\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +339,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUiStopwatch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUiStopwatch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "\"\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,6 +381,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C929A6CE2AA4D3150056774E /* XCRemoteSwiftPackageReference "FontAwesome.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thii/FontAwesome.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C929A6CF2AA4D3150056774E /* FontAwesome */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C929A6CE2AA4D3150056774E /* XCRemoteSwiftPackageReference "FontAwesome.swift" */;
+			productName = FontAwesome;
+		};
+		C929A6D12AA4D3150056774E /* tools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C929A6CE2AA4D3150056774E /* XCRemoteSwiftPackageReference "FontAwesome.swift" */;
+			productName = tools;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C96EE2FA2A9DBA8700FE8CFF /* Project object */;
 }
