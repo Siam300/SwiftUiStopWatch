@@ -1,5 +1,5 @@
 # SwiftUiStopWatch
-Stop Watch
+Stop Watch ⏱
 
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-09-02 at 21 19 30](https://github.com/Siam300/SwiftUiStopWatch/assets/89306483/eb52331e-1e2a-4364-be65-2adbebd85a18)
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-09-02 at 21 19 48](https://github.com/Siam300/SwiftUiStopWatch/assets/89306483/561cc063-b019-4887-8994-00e188eacb77)
